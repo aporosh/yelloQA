@@ -12,7 +12,8 @@ public abstract class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_130");
         driver = new ChromeDriver();
        // driver.manage().window().maximize();
