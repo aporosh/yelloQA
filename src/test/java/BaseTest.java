@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.time.Duration;
 
 public abstract class BaseTest {
@@ -12,11 +14,13 @@ public abstract class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver.exe");
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
+       // System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_130");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
        // driver.manage().window().maximize();
        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
