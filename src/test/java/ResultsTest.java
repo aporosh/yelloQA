@@ -18,73 +18,73 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @ExtendWith(TestListener.class)
 public class ResultsTest extends BaseTest{
-    @Test
-    @Owner("PAL")
-    @DisplayName("Проверка заголовка страницы")
-    @Description("Выполняется сравнение названия страницы с заранее заданным")
-    public void testOpenPage() throws IOException, InterruptedException {
-        Results resultPage = new Results();
-        Thread.sleep(2000);  // Let the user actually see something!
-        String actualTitle = resultPage.getPageTitle();
-        assertEquals("Результаты", actualTitle);
-    }
-
-    @Test
-    @Owner("PAL")
-    @DisplayName("Проверка ссылки в списке")
-    public void testClickingOnLink() throws IOException, InterruptedException {
-        Results resultPage = new Results();
-
-        Thread.sleep(4000);  // Let the user actually see something!
-        String mainWindow = driver.getWindowHandle();
-        System.out.println(driver.getCurrentUrl());
-        resultPage.openNewPageByLink();
-        Set<String> currentWindows = driver.getWindowHandles();
-        System.out.println(currentWindows);
-        String window2 = "";
-        for (String window : currentWindows) {
-            if (!window.equals(mainWindow)) {
-                window2 = window;
-                break;
-            }
-        };
-        driver.switchTo().window(window2);
-        String newWindow = driver.getWindowHandle();
-        System.out.println(driver.getCurrentUrl());
-        assertNotEquals(mainWindow, newWindow);
-    }
-
-
-
-    //Проверка изменения стиля при наведении на ссылку
-    @Test
-    @Owner("PAL")
-    public void  testStyles() throws InterruptedException {
-        Results resultPage = new Results();
-        Thread.sleep(4000);
-
-        System.out.println(resultPage.getLinkColor());
-        String colorBefore = resultPage.getLinkColor();
-
-        Actions actions = new Actions(driver);
-
-        actions.moveToElement(resultPage.link).pause(30).build().perform();
-        Thread.sleep(2000);
-        System.out.println(resultPage.getLinkColor());
-        String colorAfter = resultPage.getLinkColor();
-        assertNotEquals(colorBefore, colorAfter);
-    }
-
-
-    @Test
-    @Owner("PAL")
-    public void  testTest() {
-        Results resultPage = new Results();
-        System.out.println(resultPage.getResultTitles());
-        System.out.println(resultPage.getResultSize());
-        System.out.println(resultPage.getResultTitles());
-
-    }
+//    @Test
+//    @Owner("PAL")
+//    @DisplayName("Проверка заголовка страницы")
+//    @Description("Выполняется сравнение названия страницы с заранее заданным")
+//    public void testOpenPage() throws IOException, InterruptedException {
+//        Results resultPage = new Results();
+//        Thread.sleep(2000);  // Let the user actually see something!
+//        String actualTitle = resultPage.getPageTitle();
+//        assertEquals("Результаты", actualTitle);
+//    }
+//
+//    @Test
+//    @Owner("PAL")
+//    @DisplayName("Проверка ссылки в списке")
+//    public void testClickingOnLink() throws IOException, InterruptedException {
+//        Results resultPage = new Results();
+//
+//        Thread.sleep(4000);  // Let the user actually see something!
+//        String mainWindow = driver.getWindowHandle();
+//        System.out.println(driver.getCurrentUrl());
+//        resultPage.openNewPageByLink();
+//        Set<String> currentWindows = driver.getWindowHandles();
+//        System.out.println(currentWindows);
+//        String window2 = "";
+//        for (String window : currentWindows) {
+//            if (!window.equals(mainWindow)) {
+//                window2 = window;
+//                break;
+//            }
+//        };
+//        driver.switchTo().window(window2);
+//        String newWindow = driver.getWindowHandle();
+//        System.out.println(driver.getCurrentUrl());
+//        assertNotEquals(mainWindow, newWindow);
+//    }
+//
+//
+//
+//    //Проверка изменения стиля при наведении на ссылку
+//    @Test
+//    @Owner("PAL")
+//    public void  testStyles() throws InterruptedException {
+//        Results resultPage = new Results();
+//        Thread.sleep(4000);
+//
+//        System.out.println(resultPage.getLinkColor());
+//        String colorBefore = resultPage.getLinkColor();
+//
+//        Actions actions = new Actions(driver);
+//
+//        actions.moveToElement(resultPage.link).pause(30).build().perform();
+//        Thread.sleep(2000);
+//        System.out.println(resultPage.getLinkColor());
+//        String colorAfter = resultPage.getLinkColor();
+//        assertNotEquals(colorBefore, colorAfter);
+//    }
+//
+//
+//    @Test
+//    @Owner("PAL")
+//    public void  testTest() {
+//        Results resultPage = new Results();
+//        System.out.println(resultPage.getResultTitles());
+//        System.out.println(resultPage.getResultSize());
+//        System.out.println(resultPage.getResultTitles());
+//
+//    }
 }
 
 

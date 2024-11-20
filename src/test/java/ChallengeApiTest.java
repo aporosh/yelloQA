@@ -13,13 +13,15 @@ public class ChallengeApiTest {
 
     @Test
     public  void checkChallengeTitle(){
-        String title = given()
+        String chl = given()
                 .when()
                 .contentType(ContentType.JSON)
                 .get(URL)
                 .then().log().all()
                 .extract().body().jsonPath().getJsonObject("challenge");
+        String test = "test";
 
+        System.out.println(test);
         //Assertions.assertNotNull(Challenge::getTitle, "Поиск не осуществился");
        // Assertions.assertNotNull(Challenge::getTitle, "");
 
