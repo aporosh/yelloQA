@@ -5,7 +5,12 @@ public class Challenge {
         private String title;
         private String description;
 
+    public Challenge() {
+        super();
+    }
+
     public Challenge(String id, String title, String description) {
+        super();
         this.id = id;
         this.title = title;
         this.description = description;
@@ -22,4 +27,5 @@ public class Challenge {
     public String getDescription() {
         return description;
     }
+
 }
