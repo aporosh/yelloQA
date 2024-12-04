@@ -18,16 +18,16 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @ExtendWith(TestListener.class)
 public class ResultsTest extends BaseTest{
-//    @Test
-//    @Owner("PAL")
-//    @DisplayName("Проверка заголовка страницы")
-//    @Description("Выполняется сравнение названия страницы с заранее заданным")
-//    public void testOpenPage() throws IOException, InterruptedException {
-//        Results resultPage = new Results();
-//        Thread.sleep(2000);  // Let the user actually see something!
-//        String actualTitle = resultPage.getPageTitle();
-//        assertEquals("Результаты", actualTitle);
-//    }
+    @Test
+    @Owner("PAL")
+    @DisplayName("Проверка заголовка страницы")
+    @Description("Выполняется сравнение названия страницы с заранее заданным")
+    public void testOpenPage() throws IOException, InterruptedException {
+        Results resultPage = new Results();
+        Thread.sleep(2000);  // Let the user actually see something!
+        String actualTitle = resultPage.getPageTitle();
+        assertEquals("Результаты", actualTitle);
+    }
 //
 //    @Test
 //    @Owner("PAL")
