@@ -16,8 +16,8 @@ public abstract class BaseTest {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(true);
-       //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_130");
         driver = new ChromeDriver(options);
