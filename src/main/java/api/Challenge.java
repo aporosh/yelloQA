@@ -1,23 +1,16 @@
 package api;
 
 public class Challenge {
-        private String id;
-        private String title;
-        private String description;
+    String title;
+    String description;
 
-    public Challenge() {
-        super();
-    }
-
-    public Challenge(String id, String title, String description) {
-        super();
-        this.id = id;
+    public Challenge(String title, String description) {
         this.title = title;
         this.description = description;
     }
 
-    public String getId() {
-        return id;
+    public Challenge() {
+        super();
     }
 
     public String getTitle() {
@@ -28,4 +21,11 @@ public class Challenge {
         return description;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
