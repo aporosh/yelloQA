@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Results extends BaseSeleniumPage {
-    //public static final String RESULTS_URL = "http://158.160.42.61:3000/results/1";
-    public static final String RESULTS_URL = "http://localhost:3000/challenge/1/results";
+    public static final String RESULTS_URL = "http://158.160.42.61:3000/results/1";
+    //public static final String RESULTS_URL = "http://localhost:3000/challenge/1/results";
     //*[@id="root"]/div/div/div[1]/div[1]
     @FindBy (xpath = "//div[@data-testid='head_title']")
     private WebElement PageTitle;
