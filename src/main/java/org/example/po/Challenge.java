@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Challenge extends BaseSeleniumPage {
     //Адрес страницы
-    //public static final String CHALLENGE_URL = "http://158.160.42.61:3000/challenge/1";
-    public static final String CHALLENGE_URL = "http://localhost:3000/challenge/1";
+    public static final String CHALLENGE_URL = "http://158.160.42.61:3000/challenge/1";
+    //public static final String CHALLENGE_URL = "http://localhost:3000/challenge/1";
 
     //Локатор для названия приложения
     @FindBy(xpath = "/html/head/title")
