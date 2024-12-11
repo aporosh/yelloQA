@@ -28,7 +28,6 @@ public abstract class BaseTest {
     }
 
 
-
 //    @Test
 //    public void testOpenPage() throws IOException, InterruptedException {
 //        driver.get("http://158.160.42.61:3000/challenge/1");
