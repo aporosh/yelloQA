@@ -88,7 +88,6 @@ public class CommonChallengeTest extends BaseTest{
 //    }
 
 
-
     @Test
     @Owner("PAL")
     @DisplayName("Изменение цвета кнопки при наведении")
