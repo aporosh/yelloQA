@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Results extends BaseSeleniumPage {
-    public static final String RESULTS_URL = "http://158.160.42.61:3000/results/1";
+    public static final String RESULTS_URL = "http://158.160.42.61:3000/challenge/1/results";
     //public static final String RESULTS_URL = "http://localhost:3000/challenge/1/results";
     //public static final String RESULTS_URL = "http://0.0.0.0:3000/challenge/1/results"; // localhost is 127.0.0.1
     //*[@id="root"]/div/div/div[1]/div[1]
