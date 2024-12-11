@@ -27,7 +27,6 @@ public abstract class BaseTest {
         BaseSeleniumPage.setDriver(driver);
     }
 
-
 //    @Test
 //    public void testOpenPage() throws IOException, InterruptedException {
 //        driver.get("http://158.160.42.61:3000/challenge/1");
