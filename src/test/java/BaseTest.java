@@ -21,7 +21,7 @@ public abstract class BaseTest {
         //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         //"https://chromedriver.storage.googleapis.com/LATEST_RELEASE_130");
         driver = new ChromeDriver(options);
-       // driver.manage().window().maximize();
+        driver.manage().window().maximize();
        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         BaseSeleniumPage.setDriver(driver);
