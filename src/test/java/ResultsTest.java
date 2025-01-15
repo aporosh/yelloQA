@@ -2,7 +2,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.example.po.Challenge;
 import org.example.po.Results;
-//import org.junit.Test;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,8 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.IOException;
 import java.util.Set;
 
-//import static org.junit.Assert.assertEquals;
-//import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -24,7 +22,7 @@ public class ResultsTest extends BaseTest{
     @Description("Выполняется сравнение названия страницы с заранее заданным")
     public void testOpenPage() throws IOException, InterruptedException {
         Results resultPage = new Results();
-        Thread.sleep(2000);  // Let the user actually see something!
+        Thread.sleep(5000);  // Let the user actually see something!
         String actualTitle = resultPage.getPageTitle();
         assertEquals("Результаты", actualTitle);
     }

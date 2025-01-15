@@ -4,7 +4,7 @@ import io.qameta.allure.Owner;
 import org.example.po.Challenge;
 import org.example.po.Results;
 import org.junit.Assert;
-//import org.junit.Test;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -86,7 +86,6 @@ public class CommonChallengeTest extends BaseTest{
 //        //assertTrue("Поиск не осуществился", challengePage.isChallenge());
 //
 //    }
-
 
 
     @Test
