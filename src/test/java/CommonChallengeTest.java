@@ -24,7 +24,7 @@ public class CommonChallengeTest extends BaseTest{
     @Description("Выполняется сравнение заголовка приложения из header с заранее заданным")
     public void testOpenPage() throws IOException, InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000); // Let the user actually see something!
+        //Thread.sleep(2000); // Let the user actually see something!
         String actualTitle = driver.getTitle();
         assertEquals("Yello", actualTitle);
     }
@@ -35,7 +35,7 @@ public class CommonChallengeTest extends BaseTest{
     @Description("Выполняется поиск вэбэлемента, который содержит заголовок челенджа, в неудачном случае элемент не будет найден на странице")
     public void testExistingChallengeTitle() throws IOException, InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         assertTrue("Поиск не осуществился", challengePage.isChallenge());
     }
 
@@ -45,7 +45,7 @@ public class CommonChallengeTest extends BaseTest{
     @Description("Выполняется поиск вэбэлемента, который содержит список участников, в неудачном случае элемент не будет найден на странице")
     public void testExistingTrial() throws IOException, InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
         assertTrue("Данных для этого челенджа нет", challengePage.isTrial());
     }
 
@@ -56,11 +56,11 @@ public class CommonChallengeTest extends BaseTest{
     public void testClickingOnLinks() throws IOException, InterruptedException {
         Challenge challengePage = new Challenge();
 
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
         String mainWindow = driver.getWindowHandle();
         System.out.println(driver.getCurrentUrl());
         challengePage.openNewPageByLink();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         Set<String> currentWindows = driver.getWindowHandles();
         System.out.println(currentWindows);
         String window2 = "";
@@ -93,7 +93,7 @@ public class CommonChallengeTest extends BaseTest{
     @DisplayName("Изменение цвета кнопки при наведении")
     public void  testButtonStyles() throws InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
         String colorBefore = challengePage.getButtonColor();
         System.out.println(colorBefore);
@@ -102,7 +102,7 @@ public class CommonChallengeTest extends BaseTest{
 
         actions.moveToElement(challengePage.button1).pause(50).clickAndHold(challengePage.button1).pause(50).build().perform();
         //System.out.println(challengePage.getButtonColor());
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
         System.out.println(challengePage.getButtonStyle());
         String colorAfter = challengePage.getButtonColor();
         System.out.println(colorAfter);
@@ -115,7 +115,7 @@ public class CommonChallengeTest extends BaseTest{
     @DisplayName("Изменение цвета кнопки при нажатии")
     public void  testActiveButtonStyles() throws InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
 
         String colorBefore = challengePage.getButtonColor();
         System.out.println(colorBefore);
@@ -138,7 +138,7 @@ public class CommonChallengeTest extends BaseTest{
     @DisplayName("Появления новой пары соревнующихся после нажатия кнопки")
     public void  testNewTrialMembers() throws InterruptedException {
         Challenge challengePage = new Challenge();
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
 
         System.out.println(challengePage.getSizeTitles());
 

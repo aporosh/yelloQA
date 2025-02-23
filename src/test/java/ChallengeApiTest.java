@@ -36,6 +36,8 @@ public class ChallengeApiTest {
 
     }
 
+
+
     @Test
     @Owner("PAL")
     @DisplayName("Проверка названия челенджа")
@@ -65,4 +67,37 @@ public class ChallengeApiTest {
                 .assertThat()
                 .statusCode(404);
     }
+
+
+    /*
+    тест обнаружил ошибку функционала!
+    title: Нет проверки обязательных полей при создании челенджа
+    Summary: При отправке запроса на создание челенджа с пустыми полями, он создается, приходит респонс 200 с id и пустыми полями.
+    Expected Result: Нельзя создать челандж с пустыми полями.
+    To do: Со стороны БД наложить на поля title, description ограничения Not Null
+           Со стороны бэкэнда сделать обработку ошибки 400 bad request
+           Со стороны фронта перед отправкой запроса проверить не пустые ли поля, если да пометить их красным цветом, сообщить пользователю о необходимости их заполнить
+    Priority:
+
+     @Test
+    @Owner("PAL")
+    @DisplayName("Проверка создания челенджа с пустыми полями")
+    @Description("Выполняется проверка post запроса на обязательные поля. При попытке создать челендж с пустыми полями - ошибка")
+    public  void checkCreateChallengeNull(){
+        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecOK200());
+
+        Challenge chall = new Challenge("", "");
+        ChallengeData chl = given()
+                .body(chall)
+                .when()
+                .post("")
+                .then().log().all()
+                .extract().as(ChallengeData.class);
+
+        //assertNotNull(chl.getId());
+        //assertEquals("new title", chl.getTitle());
+        //assertEquals("new description", chl.getDescription());
+
+    }
+    * */
 }

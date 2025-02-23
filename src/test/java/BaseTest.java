@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
      protected static WebDriver driver;
@@ -15,27 +16,18 @@ public abstract class BaseTest {
     @BeforeEach
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver");
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+       // options.setHeadless(true);
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-linux64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         //"https://chromedriver.storage.googleapis.com/LATEST_RELEASE_130");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-       //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+       driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         BaseSeleniumPage.setDriver(driver);
     }
 
-//    @Test
-//    public void testOpenPage() throws IOException, InterruptedException {
-//        driver.get("http://158.160.42.61:3000/challenge/1");
-//        Thread.sleep(4000);  // Let the user actually see something!
-//        String expectedTitle = "React App";
-//        String actualTitle = driver.getTitle();
-//        assertEquals(expectedTitle, actualTitle);
-//
-//    }
 
 //    @AfterEach
 //    public  void tearDown() {

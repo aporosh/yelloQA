@@ -9,7 +9,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -22,7 +24,7 @@ public class ResultsTest extends BaseTest{
     @Description("Выполняется сравнение названия страницы с заранее заданным")
     public void testOpenPage() throws IOException, InterruptedException {
         Results resultPage = new Results();
-        Thread.sleep(5000);  // Let the user actually see something!
+      //  Thread.sleep(5000);  // Let the user actually see something!
         String actualTitle = resultPage.getPageTitle();
         assertEquals("Результаты", actualTitle);
     }
@@ -30,10 +32,11 @@ public class ResultsTest extends BaseTest{
     @Test
     @Owner("PAL")
     @DisplayName("Проверка ссылки в списке")
+    @Description("Проверяем, что ссылка открылась в новом окне, путем сравнения параметров окна")
     public void testClickingOnLink() throws IOException, InterruptedException {
         Results resultPage = new Results();
 
-        Thread.sleep(4000);  // Let the user actually see something!
+      //  Thread.sleep(4000);  // Let the user actually see something!
         String mainWindow = driver.getWindowHandle();
         System.out.println(driver.getCurrentUrl());
         resultPage.openNewPageByLink();
@@ -57,9 +60,11 @@ public class ResultsTest extends BaseTest{
     //Проверка изменения стиля при наведении на ссылку
     @Test
     @Owner("PAL")
+    @DisplayName("Проверка стиля кнопки при наведении")
+    @Description("Проверяем, что цвет кнопки изменился при наведении на нее")
     public void  testStyles() throws InterruptedException {
         Results resultPage = new Results();
-        Thread.sleep(4000);
+      //  Thread.sleep(4000);
 
         System.out.println(resultPage.getLinkColor());
         String colorBefore = resultPage.getLinkColor();
@@ -67,7 +72,8 @@ public class ResultsTest extends BaseTest{
         Actions actions = new Actions(driver);
 
         actions.moveToElement(resultPage.link).pause(30).build().perform();
-        Thread.sleep(2000);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      //  Thread.sleep(2000);
         System.out.println(resultPage.getLinkColor());
         String colorAfter = resultPage.getLinkColor();
         assertNotEquals(colorBefore, colorAfter);
